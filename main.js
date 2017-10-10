@@ -15,6 +15,7 @@ function putPickedPlaceData(pickedPlace) {
 function initialize() {
     pickedCuisine = pickRandomLocation(locations);
     putPickedPlaceData(pickedCuisine);
+    currentWeather();
 }
 
 $(document).ready(function(){
@@ -35,25 +36,28 @@ $(document).ready(function(){
 
 
 
-    $('#weatherBox').click(function(){
-        var proxy = "https://cors-anywhere.herokuapp.com/";
-        var weatherAPI = 'https://api.darksky.net/forecast/40db894f8893c02949d84e53158e3c92/33.63486,-117.74053';
-        console.log('weather box clicked');
-        $.ajax({
-            dataType:'json',
-            method: 'get',
-            url: proxy + weatherAPI,
-            success: function(result){
-                console.log('weather api running at', result);
-                currentUserWeather = result;
-                var currentSummary = currentUserWeather.currently.summary;
-                var currentTemp = currentUserWeather.currently.apparentTemperature;
-                var precipitationProbability = currentUserWeather.currently.precipPropbability;
-                var windSpeed = currentUserWeather.currently.windSpeed;
-                $('#weatherBox').text('Current Weather is '+ currentSummary + " Current temperature is " + currentTemp + " Current Wind Speed is "+ windSpeed)
-            }
-        });
-    })
 
 
 });
+
+
+
+function currentWeather(){
+    var proxy = "https://cors-anywhere.herokuapp.com/";
+    var weatherAPI = 'https://api.darksky.net/forecast/40db894f8893c02949d84e53158e3c92/33.63486,-117.74053';
+    console.log('weather box clicked');
+    $.ajax({
+        dataType:'json',
+        method: 'get',
+        url: proxy + weatherAPI,
+        success: function(result){
+            console.log('weather api running at', result);
+            currentUserWeather = result;
+            var currentSummary = currentUserWeather.currently.summary;
+            var currentTemp = currentUserWeather.currently.apparentTemperature;
+            var precipitationProbability = currentUserWeather.currently.precipPropbability;
+            var windSpeed = currentUserWeather.currently.windSpeed;
+            $('#weatherBox').text('Current Weather is '+ currentSummary + " Current temperature is " + currentTemp + " Current Wind Speed is "+ windSpeed)
+        }
+    });
+}
