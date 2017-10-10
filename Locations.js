@@ -57,10 +57,11 @@ var locations = [
     },
 ];
 function newLocation(title,src,food) {
-    this.title = title;
-    this.imgSrc = src;
-    this.foodType = food;
-    locations.push(this);
+    var newPlace = {};
+    newPlace.title = title;
+    newPlace.imgSrc = src;
+    newPlace.foodType = food;
+    locations.push(newPlace);
 }
 
 
