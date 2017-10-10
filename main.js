@@ -12,7 +12,6 @@ function putPickedPlaceData(pickedPlace) {
     $('#location').text(pickedPlace.title);
     $('body').css('background-image','url('+pickedPlace.imgSrc+')');
 }
-
 function initialize() {
     pickedCuisine = pickRandomLocation(locations);
     putPickedPlaceData(pickedCuisine);
