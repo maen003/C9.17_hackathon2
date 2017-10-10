@@ -4,7 +4,7 @@
         $.ajax({
             dataType: 'json',
             method: 'get',
-            url: proxy + yelpApi,
+            url: yelpApi,
             headers: {Authorization: 'Bearer N6_WFXHCeAWzeFBJvljs8lgptMrgkJoakrMe8wiS04dihDrsNiFWu4rWc1_5X7HzcV-tbq9L2lUOQ5qPNYloCRoexh57VDFuaaVG7p3MnlQEQ1bG59HP3vqSoSLcWXYx'},
             success: function (response) {
                 console.log('Yelp response worked', response);
