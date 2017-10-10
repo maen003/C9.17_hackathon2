@@ -1,5 +1,6 @@
 var userLocation_result;
 var currentUserWeather;
+var pickedCuisine;
 
 function pickRandomLocation(locationsArray) {
     var randomIndex = Math.floor(Math.random() * locationsArray.length);
@@ -13,8 +14,8 @@ function putPickedPlaceData(pickedPlace) {
 }
 
 function initialize() {
-    var foodInterest = pickRandomLocation(locations);
-    putPickedPlaceData(foodInterest);
+    pickedCuisine = pickRandomLocation(locations);
+    putPickedPlaceData(pickedCuisine);
 }
 
 $(document).ready(function(){
