@@ -1,5 +1,5 @@
 body {
-    background-image: url("../C9.17_hackathon2/images/testImage.jpg");
+    background-image: url("../C9.17_hackathon2/images/Korea.jpg");
     background-size: cover;
 }
 
@@ -7,7 +7,10 @@ body {
     color:floralwhite;
     float:right;
     position: absolute;
-    transform: translate(1800px,-370px);
+    transform: translate(1000px,-190px);
+    height:200px;
+    width:200px;
+    border:1px solid white
 }
 
 #middleText {
