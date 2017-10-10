@@ -28,6 +28,7 @@ $(document).ready(function(){
             success: function(result){
                 console.log('geolocation api running at', result);
                 userLocation_result = result.location;
+                yelpCall();
             }
         });
     });
