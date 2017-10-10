@@ -1,12 +1,14 @@
 body {
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 #weatherBox {
     color:floralwhite;
     float:right;
-    position: absolute;
+    position: inherit;
     transform: translate(1000px,-190px);
     height:200px;
     width:200px;
@@ -15,13 +17,38 @@ body {
 
 #middleText {
     text-align: center;
-    margin-top:23%;
+    margin-top:9%;
     color:floralwhite;
     font-size:70px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:500;
     /*display: inline-block;*/
     /*margin-left:20%;*/
+}
+/* Useing media query to get the site mobile responsive */
+
+@media only screen and (max-width: 700px) {
+    body {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+
+    #middleText {
+        text-align: center;
+        margin-top:9%;
+        color:floralwhite;
+        font-size:35px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight:500;
+    }
+    #foodButton {
+        text-align: center;
+        margin-top:9%;
+        height:40px;
+        font-size: 95%;
+    }
 }
 
 #location{
@@ -30,7 +57,8 @@ body {
 
 #foodButton {
     text-align: center;
-    margin-left:42%;
+    /*margin-left:42%;*/
     margin-top:3%;
     height:40px;
 }
+
