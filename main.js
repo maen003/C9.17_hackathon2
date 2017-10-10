@@ -33,7 +33,7 @@ $(document).ready(function(){
             }
         });
         $('#firstPage').fadeOut(1000);
-        var googleMaps = $('<div>').attr('id','googleMaps').css('height','45%').css('width','80%').css('margin-left','10%').css('transform','translateY(100%)');
+        var googleMaps = $('<div>').attr('id','googleMaps').css('height','45%').css('width','80%').css('margin-left','10%').css('transform','translateY(100%)').css('opacity','0.9');
         $('#mainPage').append(googleMaps);
         setTimeout(initMap,1000);
         // $('#googleMaps').fadeIn(2000);
