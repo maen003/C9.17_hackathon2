@@ -12,6 +12,19 @@
     <script src="locations.js"></script>
     <script src="main.js"></script>
     <script src="yelp.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAq2yv9c0yroWGtbqo2o4POs6EDkya8_W4"
+            async defer></script>
+</head>
+<body>
+    <div id="mainPage">
+        <div id="firstPage">
+            <div id="weatherBox">Weather Here</div>
+            <div id="textButton">
+                <div id="middleText">Welcome to <span id="location"></span></div>
+                <button id="foodButton" type="button" class="btn btn-success btn-lg">Click Here to Eat This Location's Food</button>
+            </div>
+            </div>
+        </div>
     <script src="googleMaps.js"></script>
 </head>
 <body>
@@ -21,9 +34,8 @@
         <div id="middleText">Welcome to <span id="location"></span></div>
         <button id="foodButton" type="button" class="btn btn-success btn-lg">Click Here to Eat This Location's Food</button>
     </div>
-    <div id="result">
-        <div id="yelpResult"></div>
-        <div id="googleMap"></div>
-    </div>
+    
+
+
 </body>
 </html>
