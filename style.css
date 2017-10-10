@@ -1,6 +1,6 @@
 body {
-    background-image: url("../C9.17_hackathon2/images/Korea.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #weatherBox {
