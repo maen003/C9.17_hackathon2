@@ -52,7 +52,7 @@ var locations = [
         foodType: 'thai'
     },
     {title: 'Vietnam',
-        imgSrc: 'images/Vietnam.jpg',
+        imgSrc: 'images/Vietnam.jpeg',
         foodType: 'vietnamese'
     },
 ];
