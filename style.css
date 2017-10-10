@@ -3,18 +3,31 @@ body {
     background-size: cover;
 }
 
+#weatherBox {
+    color:floralwhite;
+    float:right;
+    position: absolute;
+    transform: translate(1800px,-370px);
+}
+
 #middleText {
     text-align: center;
-    margin-top:25%;
+    margin-top:20%;
     color:floralwhite;
     font-size:60px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:500;
+    /*display: inline-block;*/
+    /*margin-left:20%;*/
+}
+
+#location{
+    display: inline-block;
 }
 
 #foodButton {
     text-align: center;
-    margin-left:43%;
+    margin-left:42%;
     margin-top:3%;
     height:40px;
 }
