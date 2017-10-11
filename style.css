@@ -7,8 +7,6 @@ body {
 #weatherBox {
     color:floralwhite;
     float:right;
-    position: absolute;
-    transform: translate(1000px,10px);
     height:200px;
     width:200px;
     border:1px solid white
@@ -20,8 +18,6 @@ body {
     font-size:70px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:500;
-    /*display: inline-block;*/
-    /*margin-left:20%;*/
 }
 
 #location{
@@ -33,10 +29,6 @@ body {
     margin-left:42%;
     margin-top:3%;
     height:40px;
-}
-
-#textButton{
-    transform:translateY(200%);
 }
 
 #mainPage {
@@ -64,4 +56,10 @@ body {
     margin-right: 192px;
     background-color:white;
     float:right;
+}
+#googleMaps {
+    height: 45%;
+    width: 80%;
+    margin-left: 10%;
+    transform: translateY(100%);
 }
