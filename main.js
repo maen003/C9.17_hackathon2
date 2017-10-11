@@ -32,12 +32,7 @@ function geoLocateCall(){
             yelpCall();
         }
     });
-    $('#firstPage').fadeOut(1000);
-    var googleMaps = $('<div>').attr('id','googleMaps');
-    $('#mainPage').append(googleMaps);
-    setTimeout(initMap,1000);
-    // $('#googleMaps').fadeIn(2000);
-    // initMap();
+    displayYelp();
 }
 function applyClickHandlers() {
     $('#foodButton').click(geoLocateCall);

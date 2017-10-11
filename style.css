@@ -1,6 +1,7 @@
 body {
     background-size: cover;
     background-repeat: no-repeat;
+
     background-position: center center;
 }
 
@@ -62,7 +63,7 @@ body {
     height: 45%;
     width: 80%;
     margin-left: 10%;
-    transform: translateY(100%);
+    transform: translateY(30%);
 }
 /*Helper Class*/
 .hideOverflow {
@@ -75,6 +76,10 @@ body {
     display: flex;
 }
 
+#food {
+    background-size:contain;
+    height:100%;
+    width:100%;
 @media only screen and (max-width: 600px) {
     body {
         background-size: cover;
