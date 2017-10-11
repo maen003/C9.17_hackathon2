@@ -41,10 +41,11 @@ body {
 }
 
 #yelpInfo {
+    text-align: center;
     display:inline-block;
     height: 350px;
     width: 550px;
-    top:60px;
+    top:30px;
     margin-left: 192px;
     background-color:darkred;
     float:left;
@@ -52,7 +53,18 @@ body {
     border-radius:5px;
     color:white;
     opacity:0.9;
+}
+#businessName {
     font-size:50px;
+}
+#businessPhone {
+    font-size: 20px;
+}
+#businessAddress {
+    font-size: 30px;
+}
+#goToYelp {
+    color: black;
 }
 
 #yelpPicture {
@@ -60,7 +72,7 @@ body {
     height: 350px;
     width: 550px;
     position:relative;
-    top:60px;
+    top:30px;
     margin-right: 192px;
     background-color:white;
     float:right;
@@ -71,7 +83,7 @@ body {
     height: 45%;
     width: 80%;
     margin-left: 10%;
-    transform: translateY(30%);
+    transform: translateY(20%);
     border-radius:5px;
     opacity:0.92;
 }
@@ -97,7 +109,7 @@ body {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-    }}
+    }
 
     #middleText {
         text-align: center;
