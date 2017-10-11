@@ -7,8 +7,6 @@ body {
 #weatherBox {
     color:floralwhite;
     float:right;
-    position: absolute;
-    transform: translate(1000px,10px);
     height:200px;
     width:200px;
     border:1px solid white
@@ -28,18 +26,36 @@ body {
 
 #foodButton {
     text-align: center;
-    margin-left:42%;
-    margin-top:3%;
-    height:40px;
-}
-
-#textButton{
-    transform:translateY(200%);
+    margin-left: 23%;
+    margin-top: 3%;
+    height: 40px;
 }
 
 #mainPage {
     height:100vh;
     max-width:100vw;
+}
+
+#yelpInfo {
+    display:inline-block;
+    height: 350px;
+    width: 550px;
+    top:60px;
+    margin-left: 192px;
+    background-color:white;
+    float:left;
+    position:relative;
+}
+
+#yelpPicture {
+    display:inline-block;
+    height: 350px;
+    width: 550px;
+    position:relative;
+    top:60px;
+    margin-right: 192px;
+    background-color:white;
+    float:right;
 }
 #googleMaps {
     height: 45%;
@@ -47,8 +63,13 @@ body {
     margin-left: 10%;
     transform: translateY(100%);
 }
-
 /*Helper Class*/
 .hideOverflow {
     overflow-y: hidden;
+}
+#firstPage {
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    display: flex;
 }

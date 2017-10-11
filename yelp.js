@@ -8,6 +8,14 @@ function yelpCall() {
         headers: {Authorization: 'Bearer N6_WFXHCeAWzeFBJvljs8lgptMrgkJoakrMe8wiS04dihDrsNiFWu4rWc1_5X7HzcV-tbq9L2lUOQ5qPNYloCRoexh57VDFuaaVG7p3MnlQEQ1bG59HP3vqSoSLcWXYx'},
         success: function (response) {
             console.log('Yelp response worked', response);
+            randomizeBusiness(response);
         }
     });
 }
+
+function randomizeBusiness(response) {
+    var randomIndex = Math.floor(Math.random() * 6);
+    var pickedBusiness = response.businesses[randomIndex];
+    console.log('Random business pick was', pickedBusiness);
+}
+
