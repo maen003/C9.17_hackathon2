@@ -57,38 +57,30 @@ function currentWeather(){
             var currentTemp = currentUserWeather.currently.apparentTemperature;
             var precipitationProbability = currentUserWeather.currently.precipPropbability;
             var windSpeed = currentUserWeather.currently.windSpeed;
-            $('#weatherBox').text('Current Weather is '+ currentSummary + " Current temperature is " + currentTemp);
+            $('#weatherBox').text(currentTemp + String.fromCharCode(176));
             (function(){
                 if (currentSummary === 'Clear' | 'Sunny' |'Mostly Clear' | 'Mostly Sunny') {
-                    var canvas = $('<canvas>').attr('id','weatherIcon').css('height','30px');
-                    var skycons = new Skycons({"color": "gray"});
+                    var canvas = $('<canvas>').attr('id','weatherIcon').css('height','30px').css('position','absolute').css('top','10px');
+                    var skycons = new Skycons({"color": "rgb(255, 212, 0"});
                     $('#weatherBox').append(canvas);
                     skycons.add("weatherIcon", Skycons.CLEAR_DAY);
+                    skycons.play();
+                }
+                else if (currentSummary === 'Cloudy' | 'Partly Cloudy' | 'Mostly Cloudy') {
+                    var canvas = $('<canvas>').attr('id','weatherIcon').css('height','30px').css('position','absolute').css('top','10px');
+                    var skycons = new Skycons({"color": "rgb(104, 122, 153)"});
+                    $('#weatherBox').append(canvas);
+                    skycons.add("weatherIcon", Skycons.PARTLY_CLOUDY_DAY);
+                    skycons.play();
+                }
+                else if (currentSummary === 'Rain' | 'Light Rain') {
+                    var canvas = $('<canvas>').attr('id','weatherIcon').css('height','30px').css('position','absolute').css('top','10px');
+                    var skycons = new Skycons({"color": "rgb(90, 150, 252)"});
+                    $('#weatherBox').append(canvas);
+                    skycons.add("weatherIcon", Skycons.RAIN);
                     skycons.play();
                 }
             })();
         }
     });
 }
-
-
-//
-// <canvas id="icon1" width="128" height="128"></canvas>
-//     <canvas id="icon2" width="128" height="128"></canvas>
-//     <script>
-// var skycons = new Skycons({"color": "pink"});
-// // on Android, a nasty hack is needed: {"resizeClear": true}
-//
-// // you can add a canvas by it's ID...
-// skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
-//
-// // ...or by the canvas DOM element itself.
-// skycons.add(document.getElementById("icon2"), Skycons.RAIN);
-//
-// // if you're using the Forecast API, you can also supply
-// // strings: "partly-cloudy-day" or "rain".
-//
-// // start animation!
-// skycons.play();
-//
-// </script>
