@@ -14,7 +14,7 @@ function yelpCall() {
             console.log('Yelp response worked', response);
             randomizeBusiness(response);
             displayYelp();
-            addDescription();
+
             $('body').removeClass('hideOverflow');
         }
     });
@@ -48,6 +48,7 @@ function displayYelp() {
             $('#mainPage').append(yelpInfo, pictureBox);
             $('#yelpPicture').append(foodPicture);
             $('#mainPage').append(googleMaps);
+            addDescription();
         }
     setTimeout(yelpAppear,1000);
     setTimeout(initMap,1000);
