@@ -77,9 +77,11 @@ body {
 }
 
 #food {
-    background-size:contain;
-    height:100%;
-    width:100%;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+
 @media only screen and (max-width: 600px) {
     body {
         background-size: cover;

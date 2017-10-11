@@ -1,6 +1,7 @@
 var yelpName;
 var yelpPicture;
 var yelpAddress;
+var yelpInfo;
 
 function yelpCall() {
     var proxy = 'https://cors-anywhere.herokuapp.com/';
