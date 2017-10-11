@@ -2,7 +2,7 @@ function initMap() {
     var map;
     map = new google.maps.Map(document.getElementById('googleMaps'), {
         center: {lat: 33.63486, lng: -117.74053},
-        zoom: 12,
+        zoom: 14,
         styles: [
             {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -83,6 +83,29 @@ function initMap() {
                 stylers: [{color: '#17263c'}]
             }
         ]
+    });
+    markerCoordinates = {
+        lat : yelpInfo.coordinates.latitude,
+        lng : yelpInfo.coordinates.longitude
+    };
+    // var marker = new google.maps.Marker( {
+    //     position: markerCoordinates,
+    //     map: map,
+    // });
+    var directionsDisplay = new google.maps.DirectionsRenderer({
+        map: map
+    });
+    var request = {
+        destination: markerCoordinates,
+        origin: userLocation_result,
+        travelMode: 'DRIVING'
+    };
+
+    var directionService = new google.maps.DirectionsService();
+    directionService.route(request, function(response,status){
+        if(status == 'OK') {
+            directionsDisplay.setDirections(response);
+        }
     });
 
 }
