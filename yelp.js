@@ -54,14 +54,13 @@ function addDescription(){
     $businessAddress.html(yelpAddress);
     $businessPhone.text(yelpInfo.display_phone);
     var $goToYelpButton = $('<button>', {
-        class: 'btn btn-md',
+        class: 'btn btn-danger',
         attr: {'id': 'goToYelp'},
         click: directToYelp,
         text: 'Check out on Yelp!'
     });
     $('#yelpInfo').append($businessName,$businessPhone ,$businessAddress,$goToYelpButton);
     $('#food').attr('src',yelpPicture);
-    $('#yelpInfo').append(yelpName + ' ' +yelpAddress)
 
 }
 
