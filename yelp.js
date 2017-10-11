@@ -61,10 +61,9 @@ function addDescription(){
     });
     $('#yelpInfo').append($businessName,$businessPhone ,$businessAddress,$goToYelpButton);
     $('#food').attr('src',yelpPicture);
-<<<<<<< HEAD
-=======
+
     $('#yelpInfo').append(yelpName + ' ' +yelpAddress)
->>>>>>> dev
+
 }
 
 function directToYelp() {
