@@ -1,6 +1,7 @@
 var yelpName;
 var yelpPicture;
 var yelpAddress;
+var yelpInfo;
 
 function yelpCall() {
     var proxy = 'https://cors-anywhere.herokuapp.com/';
@@ -24,7 +25,7 @@ function randomizeBusiness(response) {
     console.log('Random business pick was', pickedBusiness);
     yelpPicture = pickedBusiness.image_url;
     yelpName = pickedBusiness.name;
-    yelpAddress = pickedBusiness.location.display_address.join()
+    yelpAddress = pickedBusiness.location.display_address.join();
     yelpInfo = pickedBusiness;
 }
 
