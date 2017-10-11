@@ -173,10 +173,13 @@ body {
 
     #yelpInfo {
         all: unset;
-        background-color: darkred;
         color: white;
         opacity: 0.9;
         font-size: 28px;
+    }
+
+    #yelpInfo > div {
+        background-color: darkred;
     }
 
     #yelpPicture {
