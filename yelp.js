@@ -38,7 +38,7 @@ function randomizeBusiness(response) {
 }
 
 function displayYelp() {
-    $('#firstPage').fadeOut(2000);
+    $('#firstPage').fadeOut(1000);
         function yelpAppear(){
             var googleMaps = $('<div>').attr('id','googleMaps').addClass('col-xs-12');
             var yelpInfo = $('<div>').attr('id','yelpInfo').addClass('col-xs-12');
