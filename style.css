@@ -64,7 +64,10 @@ body {
     margin-left: 10%;
     transform: translateY(100%);
 }
-
+/*Helper Class*/
+.hideOverflow {
+    overflow-y: hidden;
+}
 #firstPage {
     align-items: center;
     height: 100%;
