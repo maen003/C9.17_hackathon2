@@ -74,6 +74,7 @@ body {
     font-size: 20px;
 }
 #businessAddress {
+    width:100%;
     font-size: 30px;
 }
 #goToYelp {
