@@ -1,6 +1,8 @@
 body {
     background-size: cover;
     background-repeat: no-repeat;
+
+    background-position: center center;
 }
 
 #weatherBox {
@@ -17,6 +19,7 @@ body {
     font-size:70px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:500;
+    text-shadow: 4px 4px black;
 }
 
 #location{
@@ -25,8 +28,8 @@ body {
 
 #foodButton {
     text-align: center;
-    margin-left: 23%;
-    margin-top: 3%;
+    display: block;
+    margin: auto;
     height: 40px;
 }
 
@@ -62,7 +65,10 @@ body {
     margin-left: 10%;
     transform: translateY(30%);
 }
-
+/*Helper Class*/
+.hideOverflow {
+    overflow-y: hidden;
+}
 #firstPage {
     align-items: center;
     height: 100%;
@@ -74,4 +80,26 @@ body {
     background-size:contain;
     height:100%;
     width:100%;
+@media only screen and (max-width: 600px) {
+    body {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    #middleText {
+        text-align: center;
+        color:floralwhite;
+        font-size:40px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-shadow: 4px 4px black;
+        font-weight:500;
+    }
+
+    #foodButton {
+        text-align: center;
+        display: block;
+        margin: 3% auto;
+        height: 40px;
+    }
 }

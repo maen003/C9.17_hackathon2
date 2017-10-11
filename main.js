@@ -19,6 +19,8 @@ function initialize() {
     currentWeather();
 }
 function geoLocateCall(){
+    $('body').addClass('hideOverflow');
+    $('#foodButton').unbind();
     console.log('hi');
     $.ajax({
         dataType:'json',

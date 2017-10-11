@@ -25,7 +25,7 @@ function randomizeBusiness(response) {
     yelpPicture = pickedBusiness.image_url;
     yelpName = pickedBusiness.name;
     yelpAddress = pickedBusiness.location.display_address.join()
-
+    yelpInfo = pickedBusiness;
 }
 
 function displayYelp() {
