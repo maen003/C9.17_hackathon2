@@ -56,7 +56,38 @@ function currentWeather(){
             var currentTemp = currentUserWeather.currently.apparentTemperature;
             var precipitationProbability = currentUserWeather.currently.precipPropbability;
             var windSpeed = currentUserWeather.currently.windSpeed;
-            $('#weatherBox').text('Current Weather is '+ currentSummary + " Current temperature is " + currentTemp + " Current Wind Speed is "+ windSpeed)
+            $('#weatherBox').text('Current Weather is '+ currentSummary + " Current temperature is " + currentTemp);
+            (function(){
+                if (currentSummary === 'Clear' | 'Sunny' |'Mostly Clear' | 'Mostly Sunny') {
+                    var canvas = $('<canvas>').attr('id','weatherIcon').css('height','30px');
+                    var skycons = new Skycons({"color": "gray"});
+                    $('#weatherBox').append(canvas);
+                    skycons.add("weatherIcon", Skycons.CLEAR_DAY);
+                    skycons.play();
+                }
+            })();
         }
     });
 }
+
+
+//
+// <canvas id="icon1" width="128" height="128"></canvas>
+//     <canvas id="icon2" width="128" height="128"></canvas>
+//     <script>
+// var skycons = new Skycons({"color": "pink"});
+// // on Android, a nasty hack is needed: {"resizeClear": true}
+//
+// // you can add a canvas by it's ID...
+// skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
+//
+// // ...or by the canvas DOM element itself.
+// skycons.add(document.getElementById("icon2"), Skycons.RAIN);
+//
+// // if you're using the Forecast API, you can also supply
+// // strings: "partly-cloudy-day" or "rain".
+//
+// // start animation!
+// skycons.play();
+//
+// </script>
