@@ -13,7 +13,9 @@ function yelpCall() {
         success: function (response) {
             console.log('Yelp response worked', response);
             randomizeBusiness(response);
-            addDescription();
+            displayYelp();
+
+            $('body').removeClass('hideOverflow');
         }
     });
 }
@@ -26,9 +28,11 @@ function randomizeBusiness(response) {
     yelpName = pickedBusiness.name;
     var addressLine1 = pickedBusiness.location.display_address[0];
     if (pickedBusiness.location.display_address.length == 3) {
-        addressLine1 += pickedBusiness.location.display_address[1];
+        addressLine1 += ' ' + pickedBusiness.location.display_address[1];
     }
-    var addressLine2 = pickedBusiness.location.display_address[pickedBusiness.location.display_address.length-1];
+    if (pickedBusiness.location.display_address.length > 1) {
+        var addressLine2 = pickedBusiness.location.display_address[pickedBusiness.location.display_address.length-1];
+    }
     yelpAddress = addressLine1 + '</br>' + addressLine2;
     yelpInfo = pickedBusiness;
 }
@@ -43,17 +47,19 @@ function displayYelp() {
             var foodPicture =$('<img>').attr('src',yelpPicture).attr('id','food');
             $('#mainPage').append(yelpInfo, pictureBox);
             $('#yelpPicture').append(foodPicture);
-            $('#mainPage').append(googleMaps)
+            $('#mainPage').append(googleMaps);
+            addDescription();
         }
-
-    setTimeout(yelpAppear,200);
-    setTimeout(initMap,3300);
+    setTimeout(yelpAppear,1000);
+    setTimeout(initMap,1000);
 }
 
 function addDescription(){
     var $businessName = $('<div>').attr('id','businessName');
     var $businessAddress = $('<div>').attr('id', 'businessAddress');
     var $businessPhone = $('<div>').attr('id', 'businessPhone');
+    var $stars = $('<img>').attr({'id': 'starRating', 'src': 'images/'+ yelpInfo.rating+ 'star.png'});
+    var $dollar = $('<div>').attr('id', 'price').text(yelpInfo.price);
     $businessName.text(yelpName);
     $businessAddress.html(yelpAddress);
     $businessPhone.text(yelpInfo.display_phone);
@@ -63,7 +69,7 @@ function addDescription(){
         click: directToYelp,
         text: 'Check out on Yelp!'
     });
-    $('#yelpInfo').append($businessName,$businessPhone ,$businessAddress,$goToYelpButton);
+    $('#yelpInfo').append($businessName, $stars, $dollar, $businessPhone, $businessAddress, $goToYelpButton);
     $('#food').attr('src',yelpPicture);
 }
 
