@@ -14,12 +14,12 @@ body {
     text-align: center;
     vertical-align: middle;
     padding-top: 10px;
-    padding-right: 34px;
+    padding-right: 50px;
     float: right;
 }
 
 #textContainer {
-    font-family: 'Overpass Mono', monospace;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     position: fixed;
     top: 50%;
     width:100%;
@@ -85,7 +85,6 @@ body {
     position:relative;
     top:30px;
     margin-right: 192px;
-    background-color:white;
     float:right;
     border-radius:5px;
     opacity:0.9;
@@ -125,7 +124,7 @@ body {
     text-shadow: 4px 4px black;
     color: #fff;
     display: inline-block;
-    position: absolute;
+    position: fixed;
     top: 42%;
     width: 100%;
 }
@@ -161,7 +160,7 @@ body {
     }
 
     #textContainer {
-        font-family: 'Overpass Mono', monospace;
+        font-family: 'Khula', sans-serif;
     }
 
     #mainPage {
