@@ -1,7 +1,6 @@
 body {
     background-size: cover;
     background-repeat: no-repeat;
-
     background-position: center center;
 }
 
@@ -13,11 +12,14 @@ body {
     border:1px solid white
 }
 
+#textContainer {
+    font-family: 'Overpass Mono', monospace;
+}
+
 #middleText {
     text-align: center;
     color:floralwhite;
     font-size:70px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:500;
     text-shadow: 4px 4px black;
 }
@@ -85,9 +87,10 @@ body {
 }
 
 #food {
-    background-size:contain;
-    height:100%;
-    width:100%;}
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
 
 @media only screen and (max-width: 600px) {
     body {
@@ -100,7 +103,6 @@ body {
         text-align: center;
         color:floralwhite;
         font-size:40px;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-shadow: 4px 4px black;
         font-weight:500;
     }
@@ -111,3 +113,13 @@ body {
         margin: 3% auto;
         height: 40px;
     }
+
+}
+
+.clock {
+    font-size: 7em;
+    text-align: center;
+    text-shadow: 4px 4px black;
+    color: #fff;
+}
+
