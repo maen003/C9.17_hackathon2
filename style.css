@@ -51,7 +51,10 @@ body {
 
 #yelpInfo {
     text-align: center;
-    display:inline-block;
+    display:inline-flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: baseline;
     height: 350px;
     width: 550px;
     top:30px;
@@ -67,6 +70,7 @@ body {
     font-size:50px;
 }
 #businessPhone {
+    width: 100%;
     font-size: 20px;
 }
 #businessAddress {

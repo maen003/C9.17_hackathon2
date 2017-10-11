@@ -13,7 +13,9 @@ function yelpCall() {
         success: function (response) {
             console.log('Yelp response worked', response);
             randomizeBusiness(response);
+            displayYelp();
             addDescription();
+            $('body').removeClass('hideOverflow');
         }
     });
 }
@@ -28,13 +30,14 @@ function randomizeBusiness(response) {
     if (pickedBusiness.location.display_address.length == 3) {
         addressLine1 += pickedBusiness.location.display_address[1];
     }
-    var addressLine2 = pickedBusiness.location.display_address[pickedBusiness.location.display_address.length-1];
+    if (pickedBusiness.location.display_address.length > 1) {
+        var addressLine2 = pickedBusiness.location.display_address[pickedBusiness.location.display_address.length-1];
+    }
     yelpAddress = addressLine1 + '</br>' + addressLine2;
     yelpInfo = pickedBusiness;
 }
 
 function displayYelp() {
-    $('#firstPage').fadeOut(1000);
     var googleMaps = $('<div>').attr('id','googleMaps').addClass('col-xs-12');
     var yelpInfo = $('<div>').attr('id','yelpInfo').addClass('col-xs-12');
     var pictureBox = $('<div>').attr('id','yelpPicture').addClass('col-xs-12');
@@ -59,7 +62,7 @@ function addDescription(){
         click: directToYelp,
         text: 'Check out on Yelp!'
     });
-    $('#yelpInfo').append($businessName,$businessPhone ,$businessAddress,$goToYelpButton);
+    $('#yelpInfo').append($businessName,$businessPhone,$businessAddress,$goToYelpButton);
     $('#food').attr('src',yelpPicture);
 
 }

@@ -20,6 +20,7 @@ function initialize() {
 }
 function geoLocateCall(){
     $('body').addClass('hideOverflow');
+    $('#firstPage').fadeOut(1000);
     $('#foodButton').unbind();
     console.log('hi');
     $.ajax({
@@ -32,7 +33,7 @@ function geoLocateCall(){
             yelpCall();
         }
     });
-    displayYelp();
+
 }
 function applyClickHandlers() {
     $('#foodButton').click(geoLocateCall);
