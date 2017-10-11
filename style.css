@@ -118,10 +118,14 @@ body {
 }
 
 .clock {
-    font-size: 7em;
+    font-size: 6em;
     text-align: center;
     text-shadow: 4px 4px black;
     color: #fff;
+    display: inline-block;
+    position: absolute;
+    left: 41%;
+    top: 33%;
 }
 
 @media only screen and (max-width: 650px) {
@@ -153,16 +157,6 @@ body {
         margin: 3% auto;
         height: 40px;
     }
-}
-.clock {
-    font-size: 6em;
-    text-align: center;
-    text-shadow: 4px 4px black;
-    color: #fff;
-    display: inline-block;
-    position: absolute;
-    left: 41%;
-    top: 33%;
 
     #textContainer {
         font-family: 'Overpass Mono', monospace;
@@ -217,6 +211,5 @@ body {
 
 
 }
-
 
 
