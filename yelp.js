@@ -31,9 +31,9 @@ function randomizeBusiness(response) {
 
 function displayYelp() {
     $('#firstPage').fadeOut(1000);
-    var googleMaps = $('<div>').attr('id','googleMaps');
-    var yelpInfo = $('<div>').attr('id','yelpInfo');
-    var pictureBox = $('<div>').attr('id','yelpPicture');
+    var googleMaps = $('<div>').attr('id','googleMaps').addClass('col-xs-12');
+    var yelpInfo = $('<div>').attr('id','yelpInfo').addClass('col-xs-12');
+    var pictureBox = $('<div>').attr('id','yelpPicture').addClass('col-xs-12');
         // yelpPicture = pickedBusiness.image_url;
     var foodPicture =$('<img>').attr('src',yelpPicture).attr('id','food');
     $('#mainPage').append(yelpInfo, pictureBox);
@@ -44,5 +44,5 @@ function displayYelp() {
 
 function addDescription(){
     $('#food').attr('src',yelpPicture);
-    $('#yelpInfo').append(yelpName,yelpAddress)
+    $('#yelpInfo').append(yelpName + ' ' +yelpAddress)
 }
