@@ -3,6 +3,13 @@ var yelpPicture;
 var yelpAddress;
 var yelpInfo;
 
+/***************************************************************************************************
+ * yelpCall - Uses Yelp API to get response data from a search based on the random country selected on main page
+ * @param: {none}
+ * @returns: {none}
+ * @calls: {randomizeBusiness(response), displayYelp}
+ */
+
 function yelpCall() {
     var proxy = 'https://cors-anywhere.herokuapp.com/';
     var yelpApi = 'https://api.yelp.com/v3/businesses/search?term=' + pickedCuisine.foodType + '&latitude=' + userLocation_result.lat +'&longitude=' + userLocation_result.lng +'&Authorization=Bearer N6_WFXHCeAWzeFBJvljs8lgptMrgkJoakrMe8wiS04dihDrsNiFWu4rWc1_5X7HzcV-tbq9L2lUOQ5qPNYloCRoexh57VDFuaaVG7p3MnlQEQ1bG59HP3vqSoSLcWXYx';
@@ -21,6 +28,13 @@ function yelpCall() {
     });
 }
 
+/***************************************************************************************************
+ * randomizeBusiness - Picks a random business from result of API search
+ * @param: {response}
+ * @returns: {none}
+ * @calls: {none}
+ */
+
 function randomizeBusiness(response) {
     var randomIndex = Math.floor(Math.random() * 6);
     var pickedBusiness = response.businesses[randomIndex];
@@ -38,6 +52,13 @@ function randomizeBusiness(response) {
     yelpInfo = pickedBusiness;
 }
 
+/***************************************************************************************************
+ * displayYelp - After button on first page is clicked, creates divs to append on screen
+ * @param: {none}
+ * @returns: {none}
+ * @calls: {yelpAppear}
+ */
+
 function displayYelp() {
     $('#firstPage').fadeOut(1000);
         function yelpAppear(){
@@ -54,6 +75,13 @@ function displayYelp() {
     setTimeout(yelpAppear,1000);
     setTimeout(initMap,1000);
 }
+
+/***************************************************************************************************
+ * addDescription - Appends all info of randomly picked business
+ * @param: {none}
+ * @returns: {none}
+ * @calls: {none}
+ */
 
 function addDescription(){
     var $businessName = $('<div>').attr('id','businessName');
@@ -75,6 +103,13 @@ function addDescription(){
     $('#yelpInfo').append($businessName, starContainer, $dollar, $businessPhone, $businessAddress, $goToYelpButton);
     $('#food').attr('src',yelpPicture);
 }
+
+/***************************************************************************************************
+ * directionToYelp - opens and post google maps with direction from current location to restaurant
+ * @param: {none}
+ * @returns: {none}
+ * @calls: {none}
+ */
 
 function directToYelp() {
     window.open(yelpInfo.url);
