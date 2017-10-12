@@ -66,6 +66,7 @@ body {
     border-radius:5px;
     color:white;
     opacity:0.9;
+    padding:0;
 }
 #businessName {
     font-size:50px;
@@ -91,8 +92,8 @@ body {
 
 #yelpPicture {
     display:inline-block;
-    height: auto;
-    width: auto;
+    height: 350px;
+    width: 500px;
     max-height:350px;
     max-width:500px;
     position:relative;
@@ -101,7 +102,7 @@ body {
     border-radius:5px;
     opacity:0.9;
     overflow:hidden;
-
+    padding:0;
 }
 #googleMaps {
     height: 45%;
@@ -131,13 +132,13 @@ body {
 }
 
 .clock {
-    font-size: 4em;
+    font-size: 7em;
     text-align: center;
     text-shadow: 4px 4px black;
     color: #fff;
     display: inline-block;
     position: fixed;
-    top: 42%;
+    top: 28%;
     width: 100%;
 }
 
@@ -269,6 +270,9 @@ body {
         padding-right: 1px;
         margin-right: 48px;
         float: right;
+    }
+    .clock {
+        display:none;
     }
 }
 
