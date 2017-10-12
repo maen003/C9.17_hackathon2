@@ -84,14 +84,15 @@ function initMap() {
             }
         ]
     });
+
     markerCoordinates = {
         lat : yelpInfo.coordinates.latitude,
         lng : yelpInfo.coordinates.longitude
     };
-    // var marker = new google.maps.Marker( {
-    //     position: markerCoordinates,
-    //     map: map,
-    // });
+// var marker = new google.maps.Marker( {
+//     position: markerCoordinates,
+//     map: map,
+// });
     var directionsDisplay = new google.maps.DirectionsRenderer({
         map: map
     });
@@ -107,5 +108,8 @@ function initMap() {
             directionsDisplay.setDirections(response);
         }
     });
+
+}
+function showDirections() {
 
 }
