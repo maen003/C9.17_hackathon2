@@ -69,6 +69,13 @@ body {
 }
 #businessName {
     font-size:50px;
+    width: 100%;
+}
+#price {
+    font-size: 40px;
+    line-height: 40px;
+    transform: translateY(10px);
+    width: 30%
 }
 #businessPhone {
     width: 100%;
@@ -191,7 +198,12 @@ body {
     #yelpInfo > div {
         background-color: darkred;
     }
-
+    #price {
+        transform: translateY(0);
+        line-height: 30px;
+        font-size: 30px;
+        width: 100%;
+    }
     #businessName {
         font-size: 30px;
     }
