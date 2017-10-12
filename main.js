@@ -49,6 +49,10 @@ function initialize() {
 function geoLocateCall(){
     $('body').addClass('hideOverflow');
     $('#firstPage').fadeOut(1000);
+    if ($(document).width() <= 700) {
+        $('.clock').addClass('clockHide');
+        $('.clockHide').fadeOut(1000);
+    }
     $('#foodButton').unbind();
     console.log('hi');
     $.ajax({
@@ -108,26 +112,34 @@ function currentWeather(){
             var windSpeed = currentUserWeather.currently.windSpeed;
             $('#weatherBox').text(parseInt(currentTemp) + String.fromCharCode(176));
             (function(){
-                if (currentSummary === 'Clear' | 'Sunny' |'Mostly Clear' | 'Mostly Sunny') {
-                    var canvas = $('<canvas>').attr('id','weatherIcon').css('height','30px').css('position','absolute').css('top','10px');
-                    var skycons = new Skycons({"color": "rgb(255, 212, 0"});
-                    $('#weatherBox').append(canvas);
-                    skycons.add("weatherIcon", Skycons.CLEAR_DAY);
-                    skycons.play();
-                }
-                else if (currentSummary === 'Cloudy' | 'Partly Cloudy' | 'Mostly Cloudy') {
-                    var canvas = $('<canvas>').attr('id','weatherIcon').css('height','30px').css('position','absolute').css('top','10px');
-                    var skycons = new Skycons({"color": "rgb(104, 122, 153)"});
-                    $('#weatherBox').append(canvas);
-                    skycons.add("weatherIcon", Skycons.PARTLY_CLOUDY_DAY);
-                    skycons.play();
-                }
-                else if (currentSummary === 'Rain' | 'Light Rain') {
-                    var canvas = $('<canvas>').attr('id','weatherIcon').css('height','30px').css('position','absolute').css('top','10px');
-                    var skycons = new Skycons({"color": "rgb(90, 150, 252)"});
-                    $('#weatherBox').append(canvas);
-                    skycons.add("weatherIcon", Skycons.RAIN);
-                    skycons.play();
+                switch (currentSummary){
+                    case 'Clear':
+                    case 'Sunny':
+                    case 'Mostly Clear':
+                    case 'Mostly Sunny':
+                        var canvas = $('<canvas>').attr('id','weatherIcon').css('height','30px').css('position','absolute').css('top','10px');
+                        var skycons = new Skycons({"color": "rgb(255, 212, 0"});
+                        $('#weatherBox').append(canvas);
+                        skycons.add("weatherIcon", Skycons.CLEAR_DAY);
+                        skycons.play();
+                        break;
+                    case 'Cloudy':
+                    case 'Partly Cloudy':
+                    case 'Mostly Cloudy':
+                        var canvas = $('<canvas>').attr('id','weatherIcon').css('height','30px').css('position','absolute').css('top','10px');
+                        var skycons = new Skycons({"color": "rgb(104, 122, 153)"});
+                        $('#weatherBox').append(canvas);
+                        skycons.add("weatherIcon", Skycons.PARTLY_CLOUDY_DAY);
+                        skycons.play();
+                        break;
+                    case 'Rain':
+                    case 'Light Rain':
+                        var canvas = $('<canvas>').attr('id','weatherIcon').css('height','30px').css('position','absolute').css('top','10px');
+                        var skycons = new Skycons({"color": "rgb(90, 150, 252)"});
+                        $('#weatherBox').append(canvas);
+                        skycons.add("weatherIcon", Skycons.RAIN);
+                        skycons.play();
+                        break;
                 }
             })();
         }
