@@ -58,18 +58,20 @@ function addDescription(){
     var $businessName = $('<div>').attr('id','businessName');
     var $businessAddress = $('<div>').attr('id', 'businessAddress');
     var $businessPhone = $('<div>').attr('id', 'businessPhone');
+    var starContainer = $('<div>');
     var $stars = $('<img>').attr({'id': 'starRating', 'src': 'images/'+ yelpInfo.rating+ 'star.png'});
+    starContainer.append($stars);
     var $dollar = $('<div>').attr('id', 'price').text(yelpInfo.price);
     $businessName.text(yelpName);
     $businessAddress.html(yelpAddress);
     $businessPhone.text(yelpInfo.display_phone);
     var $goToYelpButton = $('<button>', {
-        class: 'btn btn-md',
+        class: 'btn btn-danger',
         attr: {'id': 'goToYelp'},
         click: directToYelp,
         text: 'Check out on Yelp!'
     });
-    $('#yelpInfo').append($businessName, $stars, $dollar, $businessPhone, $businessAddress, $goToYelpButton);
+    $('#yelpInfo').append($businessName, starContainer, $dollar, $businessPhone, $businessAddress, $goToYelpButton);
     $('#food').attr('src',yelpPicture);
 }
 
