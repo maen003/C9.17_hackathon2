@@ -195,6 +195,7 @@ body {
     }
 
     #yelpInfo > div {
+        padding-left: 1%;
         background-color: darkred;
     }
     #price {
