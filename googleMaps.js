@@ -1,8 +1,19 @@
+/***************************************************************************************************
+ * initMap - Styles Google maps
+ * @param: {none}
+ * @returns: {none}
+ * @calls:
+ */
+
 function initMap() {
     var map;
     map = new google.maps.Map(document.getElementById('googleMaps'), {
-        center: {lat: 33.63486, lng: -117.74053},
+        center: {lat: userLocation_result.lat, lng: userLocation_result.lng},
+        type: 'food',
         zoom: 14,
+        food: {
+            icon: iconBase + 'cutlery.png'
+        },
         styles: [
             {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -108,6 +119,7 @@ function initMap() {
             directionsDisplay.setDirections(response);
         }
     });
+
 
 }
 function showDirections() {
