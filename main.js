@@ -49,6 +49,10 @@ function initialize() {
 function geoLocateCall(){
     $('body').addClass('hideOverflow');
     $('#firstPage').fadeOut(1000);
+    if ($(document).width() <= 700) {
+        $('.clock').addClass('clockHide');
+        $('.clockHide').fadeOut(1000);
+    }
     $('#foodButton').unbind();
     console.log('hi');
     $.ajax({
